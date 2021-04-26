@@ -1,8 +1,9 @@
 ## Reproducer for issue #24, see [https://github.com/cescoffier/quarkus-todo-app/issues/24]
 
-This repo is basically the same as https://github.com/cescoffier/quarkus-todo-app but with the following 2 files added:
+This repo is basically the same as https://github.com/cescoffier/quarkus-todo-app but with the following 3 files added/changed:
 1. Dockerfile in repo-dir/quarkus-todo
 2. docker-compose.yml in repo-dir/quarkus-todo
+3. application properties adapted to setup in docker-compose.yml
 
 Environment:
 * Maven home: C:\Program Files\Maven\apache-maven-3.6.3
