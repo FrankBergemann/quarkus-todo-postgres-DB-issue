@@ -1,24 +1,24 @@
-# Reproducer for issue #24, see https://github.com/cescoffier/quarkus-todo-app/issues/24
+## Reproducer for issue #24, see [https://github.com/cescoffier/quarkus-todo-app/issues/24]
 
 This repo is basically the same as https://github.com/cescoffier/quarkus-todo-app but with the following 2 files added:
-	1. Dockerfile in <repo-dir>/quarkus-todo
-	2. docker-compose.yml in <repo-dir>/quarkus-todo
+1. Dockerfile in repo-dir/quarkus-todo
+2. docker-compose.yml in repo-dir/quarkus-todo
 
 Environment:
-Maven home: C:\Program Files\Maven\apache-maven-3.6.3
-Java version: 11.0.8, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-11.0.8
-Default locale: de_DE, platform encoding: Cp1252
-OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+* Maven home: C:\Program Files\Maven\apache-maven-3.6.3
+* Java version: 11.0.8, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-11.0.8
+* Default locale: de_DE, platform encoding: Cp1252
+* OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 Steps to reproduce the issue:
-	1. clone this repo
-	2. cd <repo-dir>/quarkus-todo
-	3. mvn clean
-	4. Launch docker
-	5. docker-compose up
+1. clone this repo
+2. cd repo-dir/quarkus-todo
+3. mvn clean
+4. Launch docker
+5. docker-compose up
 
 Upon this, I'm getting the following exception mesagges in the console (exerpt):
-
+`
 db_1                    | PostgreSQL init process complete; ready for start up.
 db_1                    |
 db_1                    | 2021-04-26 07:53:22.004 UTC [1] LOG:  starting PostgreSQL 13.2 (Debian 13.2-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
@@ -45,5 +45,4 @@ quarkus-todo-backend_1  |       at io.agroal.pool.ConnectionFactory.createConnec
 quarkus-todo-backend_1  |       at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:452)
 quarkus-todo-backend_1  |       at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:434)
 quarkus-todo-backend_1  |       at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-
-
+`
